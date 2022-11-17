@@ -1,9 +1,12 @@
+
 import random
 
-def sontop(x=10):
-    tasodifiy_son = random.randint(1,x)
+oraliq = int(input("Oraliqni kiriting:"))
+
+def sontop():
+    tasodifiy_son = random.randint(1,oraliq)
     print('Keling "Son topish" o\'yinini o\'ynaymiz!\n')
-    print(f"Men 1 dan {x} gacha son o'yladim. Topa olasizmi?")
+    print(f"Men 1 dan {oraliq} gacha son o'yladim. Topa olasizmi?")
     taxminlar = 0
     while True:
         taxminlar += 1
@@ -14,15 +17,15 @@ def sontop(x=10):
             print("Xato, men o'ylagan son bundan kichikroq. Qaytadan urinib ko'ring:")
         else:
              break
-    print(f"TABRIKLAYMAN! {taxminlar} ta taxmin bilan topdingiz!\n")
+    print(f"Tabriklayman TOPDINGIZ! {taxminlar} ta taxmin bilan topdingiz.\n")
     return taxminlar
 
 
-def sontop_pc(x=10):
+def sontop_pc():
     print("Endi siz son o'ylang va men topishga harakat qilib ko'raman!\n")
-    input(f"1 dan {x} gacha son o'ylang va ENTER tugmasini bosing.")
+    input(f"1 dan {oraliq} gacha son o'ylang va ENTER tugmasini bosing.")
     quyi = 1
-    yuqori = x
+    yuqori = oraliq
     taxminlar = 0
     while True:
         taxminlar += 1
@@ -38,7 +41,7 @@ def sontop_pc(x=10):
             quyi = taxmin + 1
         else:
             break
-    print(f"\nURRAAA! {taxminlar} ta taxmin bilan topdim!")
+    print(f"\nTOPDIM! {taxminlar} ta taxmin bilan topdim.")
     return taxminlar
     
 def play(x=10):
@@ -47,11 +50,13 @@ def play(x=10):
         user = sontop(x)
         pc = sontop_pc(x)
         if user < pc:
-            print(f"\nSiz YUTDINGIZ! Siz {user} ta taxmin bilan, men esa {pc} ta taxmin bilan topdim!")
+            print(f"\nSiz YUTDINGIZ! Siz {user} ta taxmin bilan topdingiz, men esa {pc} ta taxmin bilan topdim!")
         elif user > pc:
-            print(f"\nMen YUTDIM! Men {pc} ta taxmin bilan, siz esa {user} ta taxmin bilan topdingiz!")
+            print(f"\nMen YUTDIM! Men {pc} ta taxmin bilan topdim, siz esa {user} ta taxmin bilan topdingiz!")
         else:
             print(f"\nDURRANG! Ikkimiz ham {user} ta taxmin bilan topdik!")
         yana = int(input("Yana o'ynaymizmi? Ha(1)/Yo'q(0): "))
              
 play()
+    
+    
